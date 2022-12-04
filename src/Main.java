@@ -2,6 +2,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 
 public class Main {
@@ -28,7 +29,11 @@ public class Main {
         persons.add(new Person("Исаак", "де Порто", 22));
         persons.add(new Person("Aнри", "д’Арамиц", 22));
         persons.add(new Person("Петя", "Васечкин", 12));
+        persons.add(new Person("Алиса","Селезнева",11));
         Collections.sort(persons, numWordCom);
+        System.out.println(persons);
+        Predicate<Person>owerAge=person ->person.getAge()<18;
+        persons.removeIf(owerAge);
         System.out.println(persons);
     }
 }
